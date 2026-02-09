@@ -119,7 +119,7 @@ export function CallToAction() {
               </div>
               <div className="text-left">
                 <div className="text-sm text-gray-300">Email Us</div>
-                <div className="font-bold">info@ugandacredit.ug</div>
+                <div className="font-bold">info@accuscapital.com</div>
               </div>
             </div>
           </motion.div>

@@ -202,7 +202,7 @@ export function ContactPage() {
 
         {/* Map Section */}
         <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+          <div className="container mx-auto px-6 lg:px-12 max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -218,9 +218,17 @@ export function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center shadow-lg"
+              className="bg-gray-200 rounded-2xl overflow-hidden h-[700px] shadow-xl shadow-[#00A99D]/10"
             >
-              <p className="text-gray-500">Map Integration Placeholder</p>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7597054326648!2d32.5810852!3d0.3105744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbd53ff41aa21%3A0x220c25a5c0d8b17b!2sAccus%20Capital%20Limited!5e0!3m2!1sen!2sug!4v1770658380665!5m2!1sen!2sug" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </motion.div>
           </div>
         </section>
