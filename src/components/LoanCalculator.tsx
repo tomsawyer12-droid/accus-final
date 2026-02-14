@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Calculator, TrendingUp, Calendar, DollarSign } from 'lucide-react';
+import { Calculator, TrendingUp, Calendar } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
 
@@ -94,19 +94,19 @@ export function LoanCalculator() {
                 </div>
                 <input
                   type="range"
-                  min="500000"
-                  max="50000000"
+                  min="100000"
+                  max="100000000"
                   step="100000"
                   value={loanAmount}
                   onChange={(e) => setLoanAmount(Number(e.target.value))}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#00A99D]"
                   style={{
-                    background: `linear-gradient(to right, #00A99D 0%, #00A99D ${((loanAmount - 500000) / (50000000 - 500000)) * 100}%, #e5e7eb ${((loanAmount - 500000) / (50000000 - 500000)) * 100}%, #e5e7eb 100%)`
+                    background: `linear-gradient(to right, #00A99D 0%, #00A99D ${((loanAmount - 100000) / (100000000 - 100000)) * 100}%, #e5e7eb ${((loanAmount - 100000) / (100000000 - 100000)) * 100}%, #e5e7eb 100%)`
                   }}
                 />
                 <div className="flex justify-between text-xs text-gray-500 mt-2">
-                  <span>UGX 500K</span>
-                  <span>UGX 50M</span>
+                  <span>UGX 100K</span>
+                  <span>UGX 100M</span>
                 </div>
               </div>
 
@@ -132,18 +132,18 @@ export function LoanCalculator() {
                 <input
                   type="range"
                   min="3"
-                  max="60"
+                  max="12"
                   step="1"
                   value={loanTerm}
                   onChange={(e) => setLoanTerm(Number(e.target.value))}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#00A99D]"
                   style={{
-                    background: `linear-gradient(to right, #00A99D 0%, #00A99D ${((loanTerm - 1) / (60 - 1)) * 100}%, #e5e7eb ${((loanTerm - 1) / (60 - 1)) * 100}%, #e5e7eb 100%)`
+                    background: `linear-gradient(to right, #00A99D 0%, #00A99D ${((loanTerm - 1) / (12 - 1)) * 100}%, #e5e7eb ${((loanTerm - 1) / (12 - 1)) * 100}%, #e5e7eb 100%)`
                   }}
                 />
                 <div className="flex justify-between text-xs text-gray-500 mt-2">
-                  <span>1 months</span>
-                  <span>60 months</span>
+                  <span>1 month</span>
+                  <span>12 months</span>
                 </div>
               </div>
 
@@ -155,23 +155,29 @@ export function LoanCalculator() {
                     <label className="text-xs text-gray-600 block mb-1">Amount (UGX)</label>
                     <input
                       type="number"
-                      min="500000"
-                      max="50000000"
+                      min="100000"
+                      max="100000000"
                       value={loanAmount === 0 ? '' : loanAmount}
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        setLoanAmount(value || 0);
+                        setLoanAmount(value);
+                      }}
+                      onBlur={() => {
+                        if (loanAmount < 100000) setLoanAmount(100000);
+                        if (loanAmount > 100000000) setLoanAmount(100000000);
                       }}
                       className={`w-full px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                        loanAmount < 500000
+                        loanAmount < 100000 || loanAmount > 100000000
                           ? 'border-red-500 focus:ring-red-500 bg-red-50'
                           : 'border-gray-300 focus:ring-[#00A99D]'
                       }`}
                     />
-                    {loanAmount < 500000 ? (
-                      <p className="text-xs text-red-600 mt-1">Minimum amount is UGX 500,000</p>
+                    {loanAmount < 100000 ? (
+                      <p className="text-xs text-red-600 mt-1">Minimum amount is UGX 100,000</p>
+                    ) : loanAmount > 100000000 ? (
+                      <p className="text-xs text-red-600 mt-1">Maximum amount is UGX 100,000,000</p>
                     ) : (
-                      <p className="text-xs text-gray-500 mt-1">Min: 500,000 | Max: 50,000,000</p>
+                      <p className="text-xs text-gray-500 mt-1">Min: 100,000 | Max: 100,000,000</p>
                     )}
                   </div>
                   <div>
@@ -179,22 +185,28 @@ export function LoanCalculator() {
                     <input
                       type="number"
                       min="1"
-                      max="60"
+                      max="12"
                       value={loanTerm === 0 ? '' : loanTerm}
                       onChange={(e) => {
                         const value = Number(e.target.value);
-                        setLoanTerm(value || 0);
+                        setLoanTerm(value);
+                      }}
+                      onBlur={() => {
+                        if (loanTerm < 1) setLoanTerm(1);
+                        if (loanTerm > 12) setLoanTerm(12);
                       }}
                       className={`w-full px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                        loanTerm < 1
+                        loanTerm < 1 || loanTerm > 12
                           ? 'border-red-500 focus:ring-red-500 bg-red-50'
                           : 'border-gray-300 focus:ring-[#00A99D]'
                       }`}
                     />
                     {loanTerm < 1 ? (
-                      <p className="text-xs text-red-600 mt-1">Minimum term is 1 months</p>
+                      <p className="text-xs text-red-600 mt-1">Minimum term is 1 month</p>
+                    ) : loanTerm > 12 ? (
+                      <p className="text-xs text-red-600 mt-1">Maximum term is 12 months</p>
                     ) : (
-                      <p className="text-xs text-gray-500 mt-1">Min: 1 | Max: 60 months</p>
+                      <p className="text-xs text-gray-500 mt-1">Min: 1 | Max: 12 months</p>
                     )}
                   </div>
                 </div>
@@ -215,7 +227,7 @@ export function LoanCalculator() {
               >
                 <div className="flex items-start gap-3 mb-2">
                   <div className="p-2 bg-white/20 rounded-lg">
-                    <DollarSign className="text-white" size={20} />
+                    <span className="text-white font-bold text-sm">UGX</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs md:text-sm text-white/80 mb-1">Monthly Payment</p>
@@ -293,9 +305,7 @@ export function LoanCalculator() {
           className="mt-8 text-center"
         >
           <p className="text-sm text-gray-600">
-            Need help choosing the right loan? <Link to="/contact" className="text-[#00A99D] hover:underline font-semibold">Contact our team</Link> or call us at <span className="font-semibold">+256 (0) 700 123 456
-
-</span>
+            Need help choosing the right loan? <Link to="/contact" className="text-[#00A99D] hover:underline font-semibold">Contact our team</Link> or call us at <span className="font-semibold">+256 763 820 376</span>
           </p>
         </motion.div>
       </div>

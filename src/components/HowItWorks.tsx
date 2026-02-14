@@ -6,22 +6,22 @@ export function HowItWorks() {
     {
       icon: FileText,
       number: '01',
-      title: 'Apply Online',
-      description: 'Fill out our simple application form in just 5 minutes',
+      title: 'Make an Inquiry',
+      description: 'Contact us via phone, email, or visit our offices to discuss your financial needs.',
       color: 'from-[#00A99D] to-[#008B82]',
     },
     {
       icon: CheckCircle,
       number: '02',
-      title: 'Get Approved',
-      description: 'Receive approval within 24 hours with minimal documentation',
+      title: 'We Reach Out',
+      description: 'Our team will contact you to discuss the best financial solution for you.',
       color: 'from-[#00A99D] to-[#008B82]',
     },
     {
       icon: Wallet,
       number: '03',
       title: 'Receive Funds',
-      description: 'Money deposited directly to your account or mobile money',
+      description: 'Once approved, money is deposited directly to your account or mobile money.',
       color: 'from-[#00A99D] to-[#008B82]',
     },
   ];
@@ -95,10 +95,10 @@ export function HowItWorks() {
           className="text-center mt-12"
         >
           <a
-            href="/apply"
+            href="/contact"
             className="inline-block bg-gradient-to-r from-[#00A99D] to-[#008B82] text-white px-10 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            Start Your Application Now
+            Contact Us Today
           </a>
         </motion.div>
       </div>

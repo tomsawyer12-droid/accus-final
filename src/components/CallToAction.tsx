@@ -56,7 +56,7 @@ export function CallToAction() {
             className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
             Get Your Loan Approved in
-            <span className="block text-white">Minutes, Not Days</span>
+            <span className="block text-white">24 Hours</span>
           </motion.h2>
 
           <motion.p
@@ -110,7 +110,7 @@ export function CallToAction() {
               </div>
               <div className="text-left">
                 <div className="text-sm text-gray-300">Call Us</div>
-                <div className="font-bold">+256 700 123 456</div>
+                <div className="font-bold">+256 763 820 376</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 text-white bg-white/10 backdrop-blur-sm rounded-2xl p-4">

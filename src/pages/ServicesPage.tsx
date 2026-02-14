@@ -1,22 +1,32 @@
 import { Header } from '../components/Header';
 import { PageHero } from '../components/PageHero';
 import { Services } from '../components/Services';
-import { WhyChooseUs } from '../components/WhyChooseUs';
+import { LoanCalculator } from '../components/LoanCalculator';
+import { FAQ } from '../components/FAQ';
 import { CallToAction } from '../components/CallToAction';
 import { Footer } from '../components/Footer';
+
+import { SEO } from '../components/SEO';
 
 export function ServicesPage() {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Our Services - Accus Capital" 
+        description="Explore our range of financial services including Business Loans, Personal Loans, Asset Financing, and Investment Advisory."
+        keywords="personal loans, group loans, emergency loans, school fees loans, asset financing, business loans uganda"
+        canonical="https://accuscapital.com/services"
+      />
       <Header />
       <main>
         <PageHero 
           title="Our Services" 
           subtitle="Comprehensive financial solutions tailored to meet your unique needs"
-          backgroundImage="https://images.unsplash.com/photo-1689152496131-9cecc95cde25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWwlMjBoYW5kc2hha2V8ZW58MXx8fHwxNzY5MTc3NDkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          backgroundImage="https://res.cloudinary.com/dywusgc6j/image/upload/v1771086592/african-business-male-people-shaking-hands_1_nasx71.jpg"
         />
         <Services />
-        <WhyChooseUs />
+        <LoanCalculator />
+        <FAQ />
         <CallToAction />
       </main>
       <Footer />

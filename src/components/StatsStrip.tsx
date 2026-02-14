@@ -57,13 +57,13 @@ export function StatsStrip() {
   const stats = [
     { 
       icon: Users, 
-      value: 5000, 
+      value: 200, 
       suffix: '+',
       label: 'Happy Clients' 
     },
     { 
       icon: TrendingUp, 
-      value: 10, 
+      value: 2, 
       suffix: 'B+',
       prefix: 'UGX ',
       label: 'Loans Disbursed' 

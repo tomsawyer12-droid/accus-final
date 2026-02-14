@@ -6,38 +6,13 @@ import { Footer } from '../components/Footer';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { LoanInquiryForm } from '../components/LoanInquiryForm';
 
+import { SEO } from '../components/SEO';
+
 export function ContactPage() {
   const [showForm, setShowForm] = useState(false);
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Head Office',
-      details: ['Plot 123, Kampala Road', 'Kampala, Uganda'],
-      color: 'from-[#00A99D] to-[#008B82]',
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: ['+256 700 123 456', '+256 800 123 456'],
-      color: 'from-[#00A99D] to-[#008B82]',
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['info@accuscapital.ug', 'support@accuscapital.ug'],
-      color: 'from-[#00A99D] to-[#008B82]',
-    },
-    {
-      icon: Clock,
-      title: 'Working Hours',
-      details: ['Mon - Fri: 8:00 AM - 6:00 PM', 'Sat: 9:00 AM - 1:00 PM'],
-      color: 'from-[#00A99D] to-[#008B82]',
-    },
-  ];
-
   const branches = [
-    { name: 'Kampala Branch', address: 'Plot 123, Kampala Road', phone: '+256 700 123 456' },
+    { name: 'Kampala Branch', address: 'Plot 123, Kampala Road', phone: '+256 763 820 376' },
     // Future branches - Uncomment when operational:
     // { name: 'Entebbe Branch', address: 'Plot 45, Airport Road', phone: '+256 700 123 457' },
     // { name: 'Jinja Branch', address: 'Plot 78, Main Street', phone: '+256 700 123 458' },
@@ -48,12 +23,18 @@ export function ContactPage() {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Contact Us - Accus Capital" 
+        description="Get in touch with Accus Capital. Visit our Kampala office, call us, or send a message for personalized financial assistance."
+        keywords="accus capital contact, loan inquiry, kampala loans, visit accus capital, customer service"
+        canonical="https://accuscapital.com/contact"
+      />
       <Header />
       <main>
         <PageHero 
           title="Contact Us" 
           subtitle="Get in touch with us - we're here to help you achieve your financial goals"
-          backgroundImage="https://images.unsplash.com/photo-1689152496131-9cecc95cde25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwYnVzaW5lc3MlMjBwcm9mZXNzaW9uYWwlMjBoYW5kc2hha2V8ZW58MXx8fHwxNzY5MTc3NDkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          backgroundImage="https://res.cloudinary.com/dywusgc6j/image/upload/v1771087820/woman-enjoys-cellphone-communication-uses-contact-application-talks-via-modern-device-wears-casual-turtleneck-poses-outside_1_px6dw0.jpg"
         />
 
         {/* Contact Information */}
@@ -69,12 +50,12 @@ export function ContactPage() {
                 className="text-center"
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-[#00A99D] mb-4">
-                  How Can We Help You?
+                  How Can We Help You Today?
                 </h2>
-                <p className="text-gray-600 mb-12 text-lg">
+                {/* <p className="text-gray-600 mb-12 text-lg">
                   Choose the best way to reach our team
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                </p> */}
+                {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                   <motion.button
                     onClick={() => setShowForm(true)}
                     whileHover={{ y: -5 }}
@@ -93,9 +74,9 @@ export function ContactPage() {
                     className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-[#00A99D] hover:bg-gray-50 transition-all duration-300 group shadow-lg"
                   >
                     <div className="text-5xl mb-4">📞</div>
-                    <h3 className="font-bold text-xl mb-2 text-[#54585A]">Call Us</h3>
+                    <h3 className="font-bold text-xl mb-2 text-[#54585A]">Call/Whatsapp Us</h3>
                     <p className="text-sm text-gray-600">
-                      +256 700 123 456
+                      +256 763 820 376
                     </p>
                   </motion.a>
 
@@ -110,7 +91,7 @@ export function ContactPage() {
                       info@accuscapital.ug
                     </p>
                   </motion.a>
-                </div>
+                </div> */}
               </motion.div>
             </div>
 
@@ -123,9 +104,9 @@ export function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-3xl font-bold text-[#00A99D] mb-6">Our Branches</h2>
+                <h2 className="text-3xl font-bold text-[#00A99D] mb-6">Head Office</h2>
                 <p className="text-gray-600 mb-8">
-                  Visit any of our branches across Uganda for personalized service.
+                  Visit our head office for personalized service.
                 </p>
                 <div className="space-y-4">
                   {branches.map((branch, index) => (
@@ -170,8 +151,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#54585A] mb-2">Call Us</h4>
-                      <p className="text-gray-600">+256 700 123 456</p>
-                      <p className="text-gray-600">+256 800 123 456</p>
+                      <p className="text-gray-600"> +256 763 820 376</p>
+                      {/* <p className="text-gray-600">+256 800 123 456</p> */}
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -181,7 +162,7 @@ export function ContactPage() {
                     <div>
                       <h4 className="font-semibold text-[#54585A] mb-2">Email Us</h4>
                       <p className="text-gray-600">info@accuscapital.ug</p>
-                      <p className="text-gray-600">support@accuscapital.ug</p>
+                      <p className="text-gray-600">accuscapital@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -190,8 +171,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-[#54585A] mb-2">Working Hours</h4>
-                      <p className="text-gray-600">Mon - Fri: 8:00 AM - 6:00 PM</p>
-                      <p className="text-gray-600">Sat: 9:00 AM - 1:00 PM</p>
+                      <p className="text-gray-600">Mon - Fri: 9:00 AM - 5:00 PM</p>
+                      <p className="text-gray-600">Sat: 9:00 AM - 3:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -201,8 +182,8 @@ export function ContactPage() {
         </section>
 
         {/* Map Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6 lg:px-12 max-w-3xl">
+        <section className="relative z-10 pt-20 pb-40 bg-gray-50">
+          <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -218,7 +199,8 @@ export function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-200 rounded-2xl overflow-hidden h-[700px] shadow-xl shadow-[#00A99D]/10"
+              className="bg-gray-200 rounded-2xl overflow-hidden shadow-xl shadow-[#00A99D]/10 mb-20"
+              style={{ height: '400px' }}
             >
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7597054326648!2d32.5810852!3d0.3105744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbd53ff41aa21%3A0x220c25a5c0d8b17b!2sAccus%20Capital%20Limited!5e0!3m2!1sen!2sug!4v1770658380665!5m2!1sen!2sug" 

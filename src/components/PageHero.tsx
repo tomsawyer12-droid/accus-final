@@ -19,7 +19,8 @@ export function PageHero({ title, subtitle, backgroundImage }: PageHeroProps) {
               className="w-full h-full object-cover"
             />
             {/* Subtle dark overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            {/* Subtle dark overlay for better text readability */}
+            <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}></div>
           </>
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-[#00A99D] via-[#008B82] to-[#00A99D]"></div>

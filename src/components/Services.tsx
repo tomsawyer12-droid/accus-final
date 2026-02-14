@@ -12,7 +12,7 @@ export function Services({ limit }: ServicesProps) {
       icon: User,
       title: 'Personal Loans',
       description: 'Designed to address individual needs such as education, medical emergencies, or personal projects, with structured repayment options.',
-      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1770472086/School_fees_loans_b1orws.jpg',
+      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1771012851/woman-with-yellow-piggy-bank-hands_orzna5.jpg',
       anchor: 'personal-loans',
     },
     {
@@ -26,14 +26,14 @@ export function Services({ limit }: ServicesProps) {
       icon: Users,
       title: 'Group Loans',
       description: 'Structured credit solutions for cooperatives, savings groups, and associations.',
-      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1770472087/Group_Loans_kdn6dh.jpg',
+      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1770472086/School_fees_loans_b1orws.jpg',
       anchor: 'group-loans',
     },
     {
       icon: AlertCircle,
       title: 'Emergency Loans',
       description: 'Timely and responsible financial assistance to meet urgent, unexpected needs.',
-      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1770472092/Emergency_loans_khvcse.jpg',
+      image: 'https://res.cloudinary.com/dywusgc6j/image/upload/v1771012909/frustrated-young-african-american-businessman-having-bad-headache_gk4yry.jpg',
       anchor: 'emergency-loans',
     },
     {

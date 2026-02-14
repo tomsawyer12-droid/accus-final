@@ -28,7 +28,7 @@ export function FAQ() {
     },
     {
       question: 'How do I check my loan application status?',
-      answer: 'You can check your application status by calling our customer service hotline at +256 700 123 456, visiting any of our branches, or through our mobile banking platform.',
+      answer: 'You can check your application status by calling our customer service hotline at +256 763 820 376, visiting any of our branches, or through our mobile banking platform.',
     },
   ];
 

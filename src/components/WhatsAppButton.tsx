@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function WhatsAppButton() {
   // Replace with actual WhatsApp business number
-  const whatsappNumber = "256757136062"; // Format: country code + number (no + or spaces)
+  const whatsappNumber = "256763820376"; // Format: country code + number (no + or spaces)
   const message = encodeURIComponent(
     "Hello! I would like to inquire about your loan services.",
   );

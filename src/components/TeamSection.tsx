@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Users, Shield, Target, Linkedin } from 'lucide-react';
+// import { Users, Shield, Target, Linkedin } from 'lucide-react';
 
 export function TeamSection() {
   const teamMembers = [
@@ -40,7 +40,7 @@ export function TeamSection() {
       bio: 'Passionate about client satisfaction and building long-term relationships with our customers.',
     },
   ];
-  const showIndividualMembers = false; // Set to true next month when individual pics are available
+  const showIndividualMembers = true; // Set to true next month when individual pics are available
 
   return (
     <section className="py-20 bg-white">
@@ -57,7 +57,7 @@ export function TeamSection() {
             Our Team
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-[#54585A] mb-4">
-            Meet Our Leadership
+            Meet Our Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Experienced professionals committed to your financial success
@@ -118,8 +118,8 @@ export function TeamSection() {
           </div>
         )}
 
-        {/* Team Values/Strengths */}
-        <motion.div
+{/* Team Values/Strengths - Hidden as per request */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -130,10 +130,10 @@ export function TeamSection() {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Guided by strong internal controls and a shared commitment to trust, responsibility, and discipline
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Team Strengths */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* <div className="grid md:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ export function TeamSection() {
               Supporting clients' financial needs with professionalism and care
             </p>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

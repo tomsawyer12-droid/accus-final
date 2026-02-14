@@ -36,12 +36,12 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string, path: string = '/') => {
     e.preventDefault();
     
-    // If we're not on the home page, navigate there first
-    if (location.pathname !== '/') {
-      navigate('/');
+    // If we're not on the target page, navigate there first
+    if (location.pathname !== path) {
+      navigate(path);
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const targetSection = document.getElementById(targetId);
@@ -50,7 +50,7 @@ export function Header() {
         }
       }, 100);
     } else {
-      // Already on home page, just scroll
+      // Already on target page, just scroll
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -63,8 +63,8 @@ export function Header() {
   const navLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Calculator', href: '/#calculator', onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleAnchorClick(e, 'calculator') },
-    { name: 'FAQs', href: '/#faqs', onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleAnchorClick(e, 'faqs') },
+    { name: 'Calculator', href: '/services#calculator', onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleAnchorClick(e, 'calculator', '/services') },
+    { name: 'FAQs', href: '/services#faqs', onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleAnchorClick(e, 'faqs', '/services') },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -135,7 +135,7 @@ export function Header() {
           >
             <Link to="/apply">
               <Button className="bg-[#00A99D] hover:bg-[#008B82] text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Apply Now
+                Apply for Loan
               </Button>
             </Link>
           </motion.div>
@@ -172,7 +172,7 @@ export function Header() {
               ))}
               <Link to="/apply" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="bg-[#00A99D] hover:bg-[#008B82] text-white px-6 py-2 rounded-full mt-4">
-                  Apply Now
+                  Apply for Loan
                 </Button>
               </Link>
             </nav>

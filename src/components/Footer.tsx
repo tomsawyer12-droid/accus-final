@@ -6,7 +6,7 @@ export function Footer() {
   const quickLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'FAQs', href: '/#faqs' },
+    { name: 'FAQs', href: '/services#faqs' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -19,10 +19,11 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#' },
+    { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61573701394413 ' },
     { icon: Twitter, href: '#' },
-    { icon: Instagram, href: '#' },
+    { icon: Instagram, href: 'https://www.instagram.com/accus.capital/' },
     { icon: Linkedin, href: '#' },
+    { icon: TikTokIcon, href: 'https://www.tiktok.com/@accus.capital' },
   ];
 
   return (
@@ -123,7 +124,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="text-[#00A99D] flex-shrink-0" size={20} />
-                <span>+256 700 123 456</span>
+                <span>+256 763 820 376</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="text-[#00A99D] flex-shrink-0" size={20} />
@@ -177,3 +178,21 @@ export function Footer() {
     </footer>
   );
 }
+
+const TikTokIcon = ({ size = 24, className, ...props }: { size?: number, className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
